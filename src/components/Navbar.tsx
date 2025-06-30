@@ -7,6 +7,8 @@ import ModeToggler from "./ModeToggler";
 import { motion } from "framer-motion";
 import { SpringTransition } from "../utils";
 import LangToggler from "./LangToggler";
+import CTA from "../data/cta";
+import Button from "./Button";
 const Navbar = () => {
     const { lang } = useGlobalContext();
     const navVariant = {
@@ -19,7 +21,7 @@ const Navbar = () => {
     };
 
     const navLinkVariants = {
-        hidden: { opacity: 0, translateX: '100%' },
+        hidden: { opacity: 0, translateX: "100%" },
         visible: {
             opacity: 1,
             translateX: 0,
@@ -28,33 +30,62 @@ const Navbar = () => {
     };
 
     return (
-        <header className="fixed top-0 left-0 w-full backdrop-blur-md bg-purple/80 px-3 py-3 flex items-center justify-between z-100">
+        <header className="fixed top-0 left-0 w-full backdrop-blur-md bg-purple/80 px-3 py-2 flex items-center justify-between z-100">
             <motion.h1
                 initial={{ translateX: "-100%", opacity: 0 }}
                 animate={{ translateX: 0, opacity: 1 }}
                 transition={SpringTransition()}
-                className="text-extra-large font-bold text-skin"
+                className="text-large lg:text-extra-large font-bold text-skin"
             >
                 <Link to={ROUTEs.HOME}>{AboutData.name[lang]}</Link>
             </motion.h1>
 
-            <nav
-                className="hidden sm:block"
-            >
+            <nav className="text-extra-small lg:text-small">
                 <motion.ul
-                    className="flex space-x-6"
+                    className="flex items-center space-x-3"
                     variants={navVariant}
                     initial={"hidden"}
                     animate={"visible"}
                 >
-                    <motion.li variants={navLinkVariants}>
-                        <NavLink link="/" label="Home" isActive={true} />
+                    <motion.li
+                        variants={navLinkVariants}
+                        className="hidden md:block"
+                    >
+                        <NavLink
+                            link={ROUTEs.HOME}
+                            label={CTA.Nav[lang].home}
+                            isActive={true}
+                        />
                     </motion.li>
-                    <motion.li variants={navLinkVariants}>
-                        <NavLink link="/about" label="About" />
+                    <motion.li
+                        variants={navLinkVariants}
+                        className="hidden md:block"
+                    >
+                        <NavLink
+                            link={ROUTEs.ABOUT}
+                            label={CTA.Nav[lang].about}
+                        />
                     </motion.li>
-                    <motion.li variants={navLinkVariants}>
-                        <NavLink link="/projects" label="Projects" />
+                    <motion.li
+                        variants={navLinkVariants}
+                        className="hidden md:block"
+                    >
+                        <NavLink
+                            link={ROUTEs.PROJECTS}
+                            label={CTA.Nav[lang].projects}
+                        />
+                    </motion.li>
+                    <motion.li
+                        variants={navLinkVariants}
+                        className="hidden md:block"
+                    >
+                        <Link to={ROUTEs.CONTACT}>
+                            <Button
+                                color="primary"
+                                label={CTA.Nav[lang].contact}
+                                size="small"
+                            />
+                        </Link>
                     </motion.li>
                     <motion.li variants={navLinkVariants}>
                         <ModeToggler />

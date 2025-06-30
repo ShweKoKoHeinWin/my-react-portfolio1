@@ -17,6 +17,7 @@ export const ROUTEs = {
     HOME: '/',
     ABOUT: '/about',
     PROJECTS: '/projects',
+    CONTACT: '/#contact'
 }
 
 export const DEFAULT_MODE = MODEs.DARK;

@@ -5,7 +5,7 @@ import type { LangProp } from "../types/hook";
 const LangToggler = () => {
     const {lang, setLang} = useGlobalContext();
     return (
-        <select defaultValue={lang} onChange={(e) => setLang(e.target.value as LangProp)} className="ring-2 rounded-lg p-1 text-skin">
+        <select defaultValue={lang} onChange={(e) => setLang(e.target.value as LangProp)} className="ring-2 rounded-lg p-2 text-skin outline-0 uppercase">
             {Object.values(LANGs).map((val) => (
                 <option key={val} className="bg-dark" value={val}>{val}</option>
             ))}

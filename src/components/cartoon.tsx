@@ -246,12 +246,12 @@ export function CartoonGuide() {
 
     return (
         <motion.div
-            className="fixed right-2 top-2/3 -translate-y-1/2 z-50"
-            initial={{ translateX: "200%" }}
-            animate={{ translateX: 0 }}
+            className="fixed right-2 bottom-0 -translate-y-1/2 z-50"
+            initial={{ translateX: "200%", translateY: '500%' }}
+            animate={{ translateX: 0, translateY: 0 }}
             transition={SpringTransition()}
             drag
-            dragConstraints={{ top: -100, bottom: 200, left: 0, right: 0 }}
+            dragConstraints={{ top: -40 * window.innerHeight / 100, bottom: 0, left: 0, right: 0 }}
         >
             <div className="relative">
                 {/* Speech Bubble - positioned at top-left */}
@@ -267,8 +267,7 @@ export function CartoonGuide() {
                         >
                             <div className="relative bg-background text-foreground rounded-2xl shadow-xl border-2 border-foreground p-4">
                                 {/* Speech bubble tail pointing to cartoon */}
-                                <div className="absolute bottom-[-12px] right-8 w-0 h-0 border-l-12 border-l-transparent border-r-12 border-r-transparent border-t-12 border-t-white"></div>
-                                <div className="absolute bottom-[-14px] right-8 w-0 h-0 border-l-12 border-l-transparent border-r-12 border-r-transparent border-t-12 border-t-gray-200"></div>
+                                <div className="absolute bottom-0 right-8 w-2 h-4 bg-foreground translate-y-full rotate-z-315"></div>
 
                                 <div className="flex items-start gap-3">
                                     <p className="text-small leading-relaxed font-medium">

@@ -1,24 +1,17 @@
 import { LANGs } from "../constants";
 import type { LangProp } from "../types/hook";
 
-interface HeroText {
-    intro: string;
-}
 
-export type HeroSection = {
-    [key in LangProp]: HeroText;
-} & {
-    files: {
-        left: string;
-    };
-};
-
-const Hero: HeroSection = {
+const Hero = {
     [LANGs.ENGLISH]: {
-        intro: "Welcome",
+        greet: "Hi! I'm",
+        intro: 'A Junior Web Developer,',
+        description: 'Building my skills in development while working to become a better person every day',
     },
     [LANGs.MYANMAR]: {
-        intro: "ကြိုဆိုပါတယ်",
+        greet: "မင်္ဂလာပါ။ ကျွန်တော်",
+        intro: 'အခြေခံအဆင့် ဝဘ်ဆိုဒ်ရေးသူတစ်ယောက်ပါ။',
+        description: 'ဝဘ်ဆိုဒ်နည်းပညာတွေ လေ့လာရင်း တစ်နေ့တစ်ခြား ပိုကောင်းတဲ့လူတစ်ယောက်ဖြစ်အောင် အစဥ်ကြိုးစားနေပါတယ်။'
     },
     files: {
         left: "hello",
@@ -38,3 +31,4 @@ const Projects = {
 };
 
 export default { Hero, Projects };
+
