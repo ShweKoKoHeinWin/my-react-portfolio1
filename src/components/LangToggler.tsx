@@ -1,4 +1,3 @@
-import React from "react";
 import { LANGs } from "../constants";
 import { useGlobalContext } from "../contexts/globalContext";
 import type { LangProp } from "../types/hook";
