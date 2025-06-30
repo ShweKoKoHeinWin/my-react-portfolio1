@@ -1,9 +1,5 @@
-import React from "react";
 import { useGlobalContext } from "../contexts/globalContext";
 import HomeData from "../data/home";
-import { Link } from "react-router-dom";
-import { ArrowRight, Download } from "lucide-react";
-import Button from "../components/Button";
 
 const Home = () => {
     const { lang } = useGlobalContext();

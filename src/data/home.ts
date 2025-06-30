@@ -1,4 +1,3 @@
-import { label } from "framer-motion/client";
 import { LANGs } from "../constants";
 import type { LangProp } from "../types/hook";
 

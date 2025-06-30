@@ -1,5 +1,4 @@
 import { Moon, Sun } from "lucide-react";
-import React, { useState } from "react";
 import { useGlobalContext } from "../contexts/globalContext";
 import { MODEs } from "../constants";
 

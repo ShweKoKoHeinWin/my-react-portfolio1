@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const NavLink = ({link = '', label, isActive = false}) => {
+const NavLink = ({link = '', label = '', isActive = false}) => {
     return (
         <Link to={link}
             className={`${isActive && 'translate-y-[-10%] shadow-light shadow-lg'} relative z-20 cursor-pointer relative px-4 py-1 ring-bottom-2 ring-light  overflow-hidden rounded-lg inline-flex justify-center items-center group hover:translate-y-[-10%] hover:shadow-md hover:shadow-light active:scale-[0.95] active:shadow-full active:translate-y-0 transition-all duration-300`}
