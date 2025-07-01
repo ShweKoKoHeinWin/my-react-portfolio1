@@ -90,7 +90,27 @@
     --color-lgray: #656e77;
     --color-blue: #3b5ba5;
 
-    --shadow-round: 0 0 50px #fff;
+    --shadow-round: 0 0 20px var(--color-primary);
+
+    /* --animate-borderDraw: borderDraw 3s ease-in-out; 
+
+    @keyframes borderDraw {
+        0% {
+            border-color: transparent;
+        }
+        25% {
+            border-right-color: white;
+        }
+        50% {
+            border-bottom-color: white;
+        }
+        75% {
+            border-left-color: white;
+        }
+        100% {
+            border-color: white;
+        }
+    } */
 }
 
 @layer base {
@@ -98,3 +118,4 @@
         @apply bg-background text-foreground;
     }
 }
+

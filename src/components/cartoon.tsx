@@ -246,7 +246,7 @@ export function CartoonGuide() {
 
     return (
         <motion.div
-            className="fixed right-2 bottom-0 -translate-y-1/2 z-50"
+            className="fixed right-2 bottom-0 -translate-y-1/2 z-10"
             initial={{ translateX: "200%", translateY: '500%' }}
             animate={{ translateX: 0, translateY: 0 }}
             transition={SpringTransition()}
@@ -263,7 +263,7 @@ export function CartoonGuide() {
                             animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
                             exit={{ opacity: 0, scale: 0.8, x: 20, y: 10 }}
                             transition={{ duration: 0.3 }}
-                            className="absolute right-0 top-0 -translate-y-[110%] -translate-x-10 pointer-events-none max-w-xs w-[30vw]"
+                            className="absolute right-0 top-0 -translate-y-[110%] -translate-x-10 pointer-events-none w-[70vw] sm:w-[50vw] md:w-[30vw]"
                         >
                             <div className="relative bg-background text-foreground rounded-2xl shadow-xl border-2 border-foreground p-4">
                                 {/* Speech bubble tail pointing to cartoon */}
@@ -361,7 +361,6 @@ export function CartoonGuide() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            transition={{ staggerChildren: 0.5 }}
                             className="absolute inset-0 pointer-events-none"
                         >
                             <motion.div
@@ -393,6 +392,7 @@ export function CartoonGuide() {
                                     opacity: [1, 0.5, 0],
                                 }}
                                 transition={{
+                                    delay: .5,
                                     duration: 3,
                                     repeat: Number.POSITIVE_INFINITY,
                                 }}

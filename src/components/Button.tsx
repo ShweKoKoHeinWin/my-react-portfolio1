@@ -5,7 +5,7 @@ const Button = ({
 }: {
     color: "secondary" | "primary";
     label?: string;
-    size?: "small" | "medium" | "large";
+    size: "small" | "medium" | "large";
 }) => {
     let textSizes = "text-extra-small sm:text-small";
     if (size === "medium") {
@@ -13,7 +13,6 @@ const Button = ({
     } else if (size === "large") {
         textSizes = "text-medium sm:text-large";
     }
-console.log(textSizes);
 
     if (color === "secondary")
         return (
@@ -27,7 +26,7 @@ console.log(textSizes);
                     className={`absolute left-0 bottom-0 w-full h-full z-0 bg-secondary translate-x-full translate-y-1/2 group-hover:translate-0 transition-all duration-300`}
                 ></div>
                 <span
-                    className={`text-secondary ${textSizes} font-bold group-hover:text-light z-1`}
+                    className={`text-secondary ${textSizes} font-bold group-hover:text-light z-10`}
                 >
                     {label}
                 </span>
@@ -46,7 +45,7 @@ console.log(textSizes);
                     className={`absolute left-0 bottom-0 w-full h-full z-0 bg-primary translate-x-full translate-y-1/2 group-hover:translate-0 transition-all duration-300`}
                 ></div>
                 <span
-                    className={`text-primary ${textSizes} font-bold drop-shadow-xs drop-shadow-dark group-hover:text-light z-1`}
+                    className={`text-primary ${textSizes} font-bold drop-shadow-xs drop-shadow-dark group-hover:text-light`}
                 >
                     {label}
                 </span>
